@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DayInMotion.sln"
+    "dotnet.defaultSolution": "VR-DayInMotion.sln"
 }
