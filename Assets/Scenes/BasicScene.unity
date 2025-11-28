@@ -650,7 +650,7 @@ Transform:
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.577, z: 50.52}
+  m_LocalPosition: {x: 0, y: 0.577, z: 40.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1367,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.064, y: 1.228}
+  m_AnchoredPosition: {x: 0.064, y: 0.72}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479900613
@@ -1384,8 +1384,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thoughtCanvas: {fileID: 479900611}
   thoughtText: {fileID: 253426775}
-  startingThought: Life is so much easier now that i got this motorized wheelchair.
+  startingThought: 'It''s hard to get out of bed sometimes. But well, I need to get
+    lunch, brush my teeth and head to work.
+
+
+    (Use the left joystick to move
+    around)'
   showOnStart: 1
+  displayTime: 5
   distance: 2
   heightOffset: -0.5
   followSpeed: 3
@@ -2510,6 +2516,9 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1329436647828978759, guid: 4791a2d5e313f354eb6b1bf6902529d2, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1465414271939527017, guid: 4791a2d5e313f354eb6b1bf6902529d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1444950831}
     - targetCorrespondingSourceObject: {fileID: 480062873732646602, guid: 4791a2d5e313f354eb6b1bf6902529d2, type: 3}
       insertIndex: 0
       addedObject: {fileID: 3421094179986444553}
@@ -2521,6 +2530,38 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 653914597}
   m_SourcePrefab: {fileID: 100100000, guid: 4791a2d5e313f354eb6b1bf6902529d2, type: 3}
+--- !u!1 &1444950830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444950831}
+  m_Layer: 0
+  m_Name: DialogueTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1444950831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444950830}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.04, y: 0.504, z: 13.348}
+  m_LocalScale: {x: 0.7692308, y: 1, z: 0.6666667}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1693272080}
+  m_Father: {fileID: 2105033491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1474951306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2831,6 +2872,76 @@ Transform:
   - {fileID: 1536075710}
   m_Father: {fileID: 231338167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1693272079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693272080}
+  - component: {fileID: 1693272081}
+  - component: {fileID: 1693272082}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1693272080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693272079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -17.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1444950831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1693272081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693272079}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.675635, y: 1, z: 1}
+  m_Center: {x: 0.054805815, y: 0, z: 0}
+--- !u!114 &1693272082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693272079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1860a27fe13b541b6bd1aef7fee324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueController: {fileID: 479900613}
+  thoughtText: (Rotate the knob to unlock the door. After that, pull it)
+  displayTime: 5
+  triggerOnce: 1
 --- !u!1 &1814801822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,6 +3265,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095024927}
   m_Mesh: {fileID: 3382409283333923501, guid: 3788755de75ef754fb77469ecf480636, type: 3}
+--- !u!4 &2105033491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1465414271939527017, guid: 4791a2d5e313f354eb6b1bf6902529d2, type: 3}
+  m_PrefabInstance: {fileID: 1274254488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118810898
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
+// Class to manage displaying dialogue/thoughts
 public class DialogueController : MonoBehaviour
 {
     [Header("UI References")]
@@ -11,6 +13,7 @@ public class DialogueController : MonoBehaviour
     [TextArea(3, 8)]
     public string startingThought = ""; 
     public bool showOnStart = false; 
+    public float displayTime = 3f;
 
     [Header("Settings")]
     public float distance = 1.5f;
@@ -20,6 +23,7 @@ public class DialogueController : MonoBehaviour
 
     private Transform head;
     private Vector3 targetPos;
+    private Coroutine hideCoroutine;
 
     void Start()
     {
@@ -29,7 +33,7 @@ public class DialogueController : MonoBehaviour
         // If you want it to appear automatically
         if (showOnStart && !string.IsNullOrEmpty(startingThought))
         {
-            Think(startingThought);
+            Think(startingThought, displayTime);
         }
     }
 
@@ -37,26 +41,35 @@ public class DialogueController : MonoBehaviour
     {
         if (!thoughtCanvas.enabled) return;
 
-        Vector3 forward = head.forward;
-        forward.y = 0;
-
-        targetPos = head.position + forward.normalized * distance;
-        targetPos += Vector3.up * heightOffset;
-
+        Vector3 screenForward = head.forward; 
+        
+        // Calculate base position in front of camera
+        targetPos = head.position + screenForward * distance;
+        targetPos += head.up * heightOffset; 
         transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * followSpeed);
 
-        Quaternion targetRot = Quaternion.LookRotation(transform.position - head.position);
+        Quaternion targetRot = Quaternion.LookRotation(transform.position - head.position, head.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * followSpeed);
     }
 
-    public void Think(string thought)
+    // Method to display a thought for a certain duration
+    public void Think(string thought, float duration)
     {
         thoughtText.text = thought;
         thoughtCanvas.enabled = true;
+
+        // Stop any existing hide coroutine
+        if (hideCoroutine != null)
+            StopCoroutine(hideCoroutine);
+
+        // Start new coroutine to hide after duration
+        hideCoroutine = StartCoroutine(HideAfterSeconds(duration));
     }
 
-    public void ClearThought()
+    // Method to hide the thought after a delay
+    private IEnumerator HideAfterSeconds(float seconds)
     {
+        yield return new WaitForSeconds(seconds);
         thoughtCanvas.enabled = false;
     }
 }
