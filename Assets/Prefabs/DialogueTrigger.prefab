@@ -67,6 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 0}
-  thoughtText: (Rotate the knob to unlock the door. After that, pull it)
+  thoughtText: (Chande the text on the Though Trigger Script in Unity Inspector)
   displayTime: 5
   wasTriggered: 0
