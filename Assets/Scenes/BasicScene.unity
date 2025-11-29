@@ -1799,6 +1799,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.8650879
       objectReference: {fileID: 0}
+    - target: {fileID: 7275192709186804035, guid: 7f45747079dfcb64f9e7ea7b68b54030, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a6d83a5f19957e45af2e7553720ee97, type: 2}
     - target: {fileID: 7553085766422382218, guid: 7f45747079dfcb64f9e7ea7b68b54030, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3821,7 +3825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1087515825356234300, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.003
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 1087515825356234300, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3859,6 +3863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7501415010594314932, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a6d83a5f19957e45af2e7553720ee97, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
