@@ -12,6 +12,13 @@ public class ArrowAnimation : MonoBehaviour
     [Header("Interaction")]
     private string playerTag = "Player";
 
+    [Tooltip("The sound clip to play when the arrow is collected.")]
+    [SerializeField] private AudioClip collectSound;
+
+    [Tooltip("Volume of the sound (0 to 1).")]
+    [Range(0f, 1f)]
+    [SerializeField] private float soundVolume = 1.0f;
+
     private Vector3 startPosition;
 
     void Start()
@@ -32,6 +39,10 @@ public class ArrowAnimation : MonoBehaviour
         // Check if the thing that touched the arrow is the Player
         if (other.CompareTag(playerTag))
         {
+            if (collectSound != null)
+            {
+                AudioSource.PlayClipAtPoint(collectSound, transform.position, soundVolume);
+            }
             // Destroy this game object
             Destroy(gameObject);
         }

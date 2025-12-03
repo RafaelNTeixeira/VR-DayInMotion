@@ -82,6 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   height: 0.2
+  collectSound: {fileID: 8300000, guid: 849baaa1635202f4f874d4c3f761c51b, type: 3}
+  soundVolume: 1
 --- !u!65 &6053228856010637004
 BoxCollider:
   m_ObjectHideFlags: 0
