@@ -1639,7 +1639,7 @@ GameObject:
   - component: {fileID: 164288416}
   - component: {fileID: 164288415}
   m_Layer: 0
-  m_Name: TeleportDestination
+  m_Name: TeleportDestination/AmbienceZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
