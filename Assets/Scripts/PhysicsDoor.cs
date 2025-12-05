@@ -10,6 +10,14 @@ public class PhysicsDoor : MonoBehaviour
     [Tooltip("The Hinge Joint on the Handle/Knob (Connects to Door Panel)")]
     [SerializeField] private HingeJoint knobJoint;
 
+    [Header("Audio")]
+    [Tooltip("The AudioSource on the door")]
+    [SerializeField] private AudioSource doorAudioSource;
+    [Tooltip("Sound to play when the latch clicks open")]
+    [SerializeField] private AudioClip unlockSound;
+    [Tooltip("Sound to play when the latch clicks closed (Optional)")]
+    [SerializeField] private AudioClip lockSound;
+
     [Header("Settings")]
     [SerializeField] private float unlockAngle = 20f; // How far to twist knob to open
     [SerializeField] private float doorOpenAngle = 90f; // Max swing range
@@ -20,6 +28,8 @@ public class PhysicsDoor : MonoBehaviour
 
     void Awake()
     {
+        if (doorAudioSource == null) doorAudioSource = GetComponent<AudioSource>();
+
         float currentSize = knobJoint.transform.lossyScale.x;
         
         knobJoint.connectedBody = GetComponent<Rigidbody>();
@@ -83,5 +93,15 @@ public class PhysicsDoor : MonoBehaviour
 
         isLocked = locked;
         doorJoint.limits = locked ? closedLimits : openLimits;
+
+        // --- AUDIO LOGIC ---
+        if (doorAudioSource != null)
+        {
+            // If we just UNLOCKED it (locked became false)
+            if (!locked && unlockSound != null)
+            {
+                doorAudioSource.PlayOneShot(unlockSound);
+            }
+        }
     }
 }
