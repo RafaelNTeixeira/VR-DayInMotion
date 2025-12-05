@@ -7120,6 +7120,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6432593388535766290, guid: 8c4fbbee2076ce4499e102372365ae9c, type: 3}
+--- !u!59 &1314851611 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 25359696205129092, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+  m_PrefabInstance: {fileID: 2062150867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1315764513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5988442730483606124, guid: 7f45747079dfcb64f9e7ea7b68b54030, type: 3}
@@ -8610,6 +8615,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5262951012656193038, guid: 8c4fbbee2076ce4499e102372365ae9c, type: 3}
+--- !u!59 &1712063329 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 25359696205129092, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+  m_PrefabInstance: {fileID: 7528922496948326073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1746135395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6804537907725603982, guid: e813f90aeb387174abe53c0835673da8, type: 3}
@@ -9413,6 +9423,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7a6d83a5f19957e45af2e7553720ee97, type: 2}
+    - target: {fileID: 8178794043760372941, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+      propertyPath: doorJoint
+      value: 
+      objectReference: {fileID: 2062150876}
+    - target: {fileID: 8178794043760372941, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+      propertyPath: knobJoint
+      value: 
+      objectReference: {fileID: 1314851611}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9421,6 +9439,11 @@ PrefabInstance:
 --- !u!4 &2062150868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1087515825356234300, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+  m_PrefabInstance: {fileID: 2062150867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!59 &2062150876 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 920014463681863335, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
   m_PrefabInstance: {fileID: 2062150867}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2063066162
@@ -10050,6 +10073,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1087515825356234300, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
   m_PrefabInstance: {fileID: 7528922496948326073}
   m_PrefabAsset: {fileID: 0}
+--- !u!59 &3421094179986444561 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 920014463681863335, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+  m_PrefabInstance: {fileID: 7528922496948326073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &4349463739364867902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10204,6 +10232,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178794043760372941, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+      propertyPath: doorJoint
+      value: 
+      objectReference: {fileID: 3421094179986444561}
+    - target: {fileID: 8178794043760372941, guid: 9729e3c35cf6330458863cc824b52115, type: 3}
+      propertyPath: knobJoint
+      value: 
+      objectReference: {fileID: 1712063329}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

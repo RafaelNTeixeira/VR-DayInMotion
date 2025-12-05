@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a49ba99273b9b4dac8344d0e9aa6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorJoint: {fileID: 920014463681863335}
-  knobJoint: {fileID: 25359696205129092}
+  doorJoint: {fileID: 0}
+  knobJoint: {fileID: 0}
   unlockAngle: 20
   doorOpenAngle: 90
 --- !u!65 &3271001545679847998
