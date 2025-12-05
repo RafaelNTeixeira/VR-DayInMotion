@@ -18,6 +18,17 @@ public class PhysicsDoor : MonoBehaviour
     private JointLimits openLimits;
     private bool isLocked = true;
 
+    void Awake()
+    {
+        float currentSize = knobJoint.transform.lossyScale.x;
+        
+        knobJoint.connectedBody = GetComponent<Rigidbody>();
+        knobJoint.transform.SetParent(null);
+        
+        // Apply that size back as a UNIFORM scale (e.g. 0.2, 0.2, 0.2)
+        knobJoint.transform.localScale = new Vector3(currentSize, currentSize, currentSize);
+    }
+
     void Start()
     {
         // Define "Closed" (Door cannot move)
