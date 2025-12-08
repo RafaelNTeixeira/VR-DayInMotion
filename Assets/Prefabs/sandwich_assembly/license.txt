@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sandwich assembly
+* source:	https://sketchfab.com/3d-models/sandwich-assembly-2ee0a6ea4b7547ad9ced7ec5aade37c9
+* author:	charalamboscharalambous8 (https://sketchfab.com/charalamboscharalambous8)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sandwich assembly" (https://sketchfab.com/3d-models/sandwich-assembly-2ee0a6ea4b7547ad9ced7ec5aade37c9) by charalamboscharalambous8 (https://sketchfab.com/charalamboscharalambous8) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
