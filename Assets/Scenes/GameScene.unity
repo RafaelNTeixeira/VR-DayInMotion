@@ -4394,7 +4394,7 @@ MonoBehaviour:
   thoughtText: {fileID: 253426775}
   typingAudioSource: {fileID: 479900614}
   startingThought: 'It''s hard to get out of bed sometimes. But well, I need to get
-    lunch and head to work.
+    breakfast and head to work.
 
 
     (Use the left joystick to move around)'
@@ -7607,10 +7607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 479900613}
-  thoughtText: 'Im hungry! Before I head out, let''s prepare breakfast first.
+  thoughtText: 'Okay, let''s prepare breakfast.
 
-    Thankfully
-    I prepared all the ingredients already. I just need to assemble my sandwhich!'
+    Thankfully I prepared all the
+    ingredients already. I just need to assemble my sandwhich!'
   displayTime: 5
   wasTriggered: 0
 --- !u!65 &904504086
@@ -14556,8 +14556,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3927376, y: 1, z: 0.82528687}
-  m_Center: {x: -0.08664286, y: 0, z: 0.08735657}
+  m_Size: {x: 3.2780457, y: 1, z: 2.0503082}
+  m_Center: {x: -0.1306305, y: 0, z: -0.5251541}
 --- !u!1 &1959638514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5574187747550197385, guid: e4c03e56c21edb84d8fadb861b6594ef, type: 3}
