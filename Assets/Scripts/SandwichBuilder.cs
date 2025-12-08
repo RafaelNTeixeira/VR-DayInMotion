@@ -74,7 +74,7 @@ public class SandwichBuilder : MonoBehaviour
         }
 
         // Play Sound
-        if(audioSource && successSound) audioSource.PlayOneShot(successSound);
+        if (audioSource && successSound) audioSource.PlayOneShot(successSound);
 
         // Delete the loose object from the player's hand
         Destroy(looseObject);
