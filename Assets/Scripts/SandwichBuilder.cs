@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class SandwichBuilder : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SandwichBuilder : MonoBehaviour
         public GameObject visualObject; 
     }
 
+    public DialogueController dialogueController;
+
     [Header("Setup")]
     public List<SandwichLayer> sandwichSteps; 
     
@@ -19,30 +22,33 @@ public class SandwichBuilder : MonoBehaviour
     public AudioClip successSound;
     public AudioClip errorSound;
 
+    [Header("After Completion")]
+    public GameObject doorIndicatorArrow;
+    public GameObject doorDialogueTrigger;
+    public XRGrabInteractable doorOpener;
+
     private int currentStepIndex = 0;
 
     void Start()
     {
-        // 1. Hide all the sandwich parts at the start
+        // Hide all the sandwich parts at the start
         foreach (var step in sandwichSteps)
         {
-            // FIX: Changed 'visualVisual' to 'visualObject'
-            if(step.visualObject != null) 
+            if (step.visualObject != null) 
                 step.visualObject.SetActive(false);
         }
     }
 
-    // Detecting the loose ingredient
     void OnTriggerEnter(Collider other)
     {
-        // 1. Is the sandwich already finished?
+        // Is the sandwich already finished?
         if (currentStepIndex >= sandwichSteps.Count) return;
 
-        // 2. Is the object an ingredient?
+        // Is the object an ingredient?
         LooseIngredient incoming = other.GetComponent<LooseIngredient>();
         if (incoming != null)
         {
-            // 3. Check Order: Is this the SPECIFIC ingredient we need right now?
+            // Check Order: Is this the SPECIFIC ingredient we need right now?
             IngredientType neededType = sandwichSteps[currentStepIndex].requiredType;
 
             if (incoming.myType == neededType)
@@ -53,7 +59,6 @@ public class SandwichBuilder : MonoBehaviour
             else
             {
                 // WRONG INGREDIENT (e.g. tried to put Avocado before Bacon)
-                // Optional: You can remove this 'else' if you want to silently ignore wrong ingredients
                 Debug.Log($"Wrong Order! Need {neededType}, got {incoming.myType}");
                 if(audioSource && errorSound) audioSource.PlayOneShot(errorSound);
             }
@@ -62,27 +67,43 @@ public class SandwichBuilder : MonoBehaviour
 
     void AddLayer(GameObject looseObject)
     {
-        // 1. Turn on the "Ghost" part in the sandwich
-        // FIX: Changed 'visualVisual' to 'visualObject'
+        // Turn on the "Ghost" part in the sandwich
         if (sandwichSteps[currentStepIndex].visualObject != null)
         {
             sandwichSteps[currentStepIndex].visualObject.SetActive(true);
         }
 
-        // 2. Play Sound
+        // Play Sound
         if(audioSource && successSound) audioSource.PlayOneShot(successSound);
 
-        // 3. Delete the loose object from the player's hand
+        // Delete the loose object from the player's hand
         Destroy(looseObject);
 
-        // 4. Advance the step
+        // Advance the step
         currentStepIndex++;
 
-        // 5. Check if finished
+        // Check if finished
+        if (currentStepIndex == sandwichSteps.Count - 2)
+        {
+            //Activate thought bubble for forgetting ketchup
+            dialogueController.Think("Can't believe I forgot to place the ketchup bottle on the counter! It should be on the shelf to my right.", 7f);
+        }
+
         if (currentStepIndex >= sandwichSteps.Count)
         {
             Debug.Log("SANDWICH COMPLETE!");
-            // Triggers logic for "Mission Complete" here
+
+            // Enable arrow indicator to door
+            if (doorIndicatorArrow != null)
+                doorIndicatorArrow.SetActive(true);
+
+            // Enable door dialogue
+            if (doorDialogueTrigger != null)
+                doorDialogueTrigger.SetActive(true);
+
+            // Enable script to open door
+            if (doorOpener != null)
+                doorOpener.enabled = true;
         }
     }
 }
