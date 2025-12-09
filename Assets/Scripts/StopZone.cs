@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic; // Required for using Lists
 
 public class StopZone : MonoBehaviour
 {
-    private CircuitMover trappedCar;
+    // Changed from a single variable to a List to hold multiple cars
+    private List<CircuitMover> trappedCars = new List<CircuitMover>();
     private Collider myCollider;
 
     void Awake()
@@ -12,9 +14,10 @@ public class StopZone : MonoBehaviour
 
     void Update()
     {
-        if (trappedCar != null && myCollider != null && !myCollider.enabled)
+        // If the collider is disabled but the script is running, release everyone
+        if (myCollider != null && !myCollider.enabled && trappedCars.Count > 0)
         {
-            ReleaseCar();
+            ReleaseAllCars();
         }
     }
 
@@ -23,19 +26,20 @@ public class StopZone : MonoBehaviour
     // ---------------------------------------------------------
     private void OnTriggerEnter(Collider other)
     {
-        // If we already have a car, ignore others to prevent logic conflicts
-        if (trappedCar != null) return;
+        // We no longer return if trappedCars is not null. We accept everyone.
 
         GameObject hitObject = GetCarObject(other);
 
         if (hitObject != null && hitObject.CompareTag("Car"))
         {
             CircuitMover mover = hitObject.GetComponent<CircuitMover>();
-            if (mover != null)
+            
+            // Check if mover exists AND is not already in our list (to avoid duplicates)
+            if (mover != null && !trappedCars.Contains(mover))
             {
-                trappedCar = mover;
+                trappedCars.Add(mover); // Add to the list
                 mover.StopCar();
-                Debug.Log("Car Stopped.");
+                Debug.Log($"Car Stopped. Total in zone: {trappedCars.Count}");
             }
         }
     }
@@ -45,12 +49,19 @@ public class StopZone : MonoBehaviour
     // ---------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        // If the exiting object is the car we are holding, release it
         GameObject hitObject = GetCarObject(other);
         
-        if (trappedCar != null && hitObject == trappedCar.gameObject)
+        if (hitObject != null)
         {
-            ReleaseCar();
+            CircuitMover mover = hitObject.GetComponent<CircuitMover>();
+
+            // If the exiting object is in our list, release it and remove it
+            if (mover != null && trappedCars.Contains(mover))
+            {
+                mover.ResumeCar();
+                trappedCars.Remove(mover);
+                Debug.Log("Car Exited and Resumed.");
+            }
         }
     }
 
@@ -59,22 +70,25 @@ public class StopZone : MonoBehaviour
     // ---------------------------------------------------------
     private void OnDisable()
     {
-        // This runs if you turn off the entire GameObject in the Inspector
-        if (trappedCar != null)
-        {
-            ReleaseCar();
-        }
+        ReleaseAllCars();
     }
 
-    // Helper to release the car safely
-    private void ReleaseCar()
+    // Helper to release ALL cars safely
+    private void ReleaseAllCars()
     {
-        if (trappedCar != null)
+        // Loop through every car in the list
+        foreach (CircuitMover car in trappedCars)
         {
-            trappedCar.ResumeCar();
-            trappedCar = null; // Forget the car so we are ready for the next one
-            Debug.Log("Car Resumed (Zone Disabled or Exited).");
+            // Check for null in case a car was destroyed while stopped
+            if (car != null)
+            {
+                car.ResumeCar();
+            }
         }
+
+        // Clear the list so it's empty
+        trappedCars.Clear();
+        Debug.Log("All Cars Released.");
     }
 
     // ---------------------------------------------------------
