@@ -3,7 +3,7 @@ using UnityEngine;
 public class WhiteboardEraser : MonoBehaviour
 {
     public Texture2D sourceTexture; 
-    public int eraserSize = 20;
+    public int eraserSize = 40; // Increased size since we don't have a specific tip
 
     private Texture2D _clonedTexture;
     private Renderer _renderer;
@@ -12,7 +12,13 @@ public class WhiteboardEraser : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
 
-        // Create the clone
+        // Safety Check
+        if (sourceTexture == null || !sourceTexture.isReadable) {
+            Debug.LogError("TEXTURE ERROR: Check Read/Write settings on " + sourceTexture?.name);
+            return;
+        }
+
+        // Clone the texture
         _clonedTexture = new Texture2D(sourceTexture.width, sourceTexture.height);
         _clonedTexture.SetPixels(sourceTexture.GetPixels());
         _clonedTexture.Apply();
@@ -22,19 +28,25 @@ public class WhiteboardEraser : MonoBehaviour
 
     public void EraseAt(Vector2 uv)
     {
-        int x = (int)(uv.x * _clonedTexture.width);
-        int y = (int)(uv.y * _clonedTexture.height);
+        // Convert % coordinates to Pixel coordinates
+        int centerX = (int)(uv.x * _clonedTexture.width);
+        int centerY = (int)(uv.y * _clonedTexture.height);
+        int radius = eraserSize / 2;
 
-        // Safety check to prevent errors if we go off the edge
-        if (x < 0 || x >= _clonedTexture.width || y < 0 || y >= _clonedTexture.height)
-            return;
-
-        Color[] cleanColors = new Color[eraserSize * eraserSize];
-        for (int i = 0; i < cleanColors.Length; i++)
-            cleanColors[i] = Color.white; 
-
-        // Apply pixels
-        _clonedTexture.SetPixels(x - eraserSize/2, y - eraserSize/2, eraserSize, eraserSize, cleanColors);
+        // Loop through pixels around the touch point
+        for (int x = centerX - radius; x < centerX + radius; x++)
+        {
+            for (int y = centerY - radius; y < centerY + radius; y++)
+            {
+                // Strict bounds checking to prevent crashes
+                if (x >= 0 && x < _clonedTexture.width && y >= 0 && y < _clonedTexture.height)
+                {
+                    _clonedTexture.SetPixel(x, y, Color.white);
+                }
+            }
+        }
+        
+        // Apply changes
         _clonedTexture.Apply();
     }
 }
