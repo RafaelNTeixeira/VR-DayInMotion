@@ -5,7 +5,7 @@ public class Eraser : MonoBehaviour
     void OnCollisionStay(Collision collision)
     {
         // 1. Check if we hit the whiteboard script
-        WhiteboardEraser board = collision.gameObject.GetComponent<WhiteboardEraser>();
+        Whiteboard board = collision.gameObject.GetComponent<Whiteboard>();
         if (board == null) return;
 
         // 2. Loop through touch points

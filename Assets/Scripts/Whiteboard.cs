@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class WhiteboardEraser : MonoBehaviour
+public class Whiteboard : MonoBehaviour
 {
     public Texture2D sourceTexture; 
-    public int eraserSize = 40; // Increased size since we don't have a specific tip
+    public int eraserSize = 40;
 
     private Texture2D _clonedTexture;
     private Renderer _renderer;
@@ -24,6 +24,28 @@ public class WhiteboardEraser : MonoBehaviour
         _clonedTexture.Apply();
 
         _renderer.material.mainTexture = _clonedTexture;
+    }
+
+    public void DrawAt(Vector2 uv, Color color, int size)
+    {
+        int centerX = (int)(uv.x * _clonedTexture.width);
+        int centerY = (int)(uv.y * _clonedTexture.height);
+        int radius = size / 2;
+
+        // Loop through pixels (Square brush)
+        for (int x = centerX - radius; x < centerX + radius; x++)
+        {
+            for (int y = centerY - radius; y < centerY + radius; y++)
+            {
+                // Safety Check
+                if (x >= 0 && x < _clonedTexture.width && y >= 0 && y < _clonedTexture.height)
+                {
+                    _clonedTexture.SetPixel(x, y, color);
+                }
+            }
+        }
+
+        _clonedTexture.Apply();
     }
 
     public void EraseAt(Vector2 uv)
