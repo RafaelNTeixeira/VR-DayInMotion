@@ -2,42 +2,29 @@ using UnityEngine;
 
 public class WhiteboardMarker : MonoBehaviour
 {
-    [Header("Pen Settings")]
+    [Header("Setup")]
+    public Transform tipTransform; 
+    
+    [Header("Settings")]
     public Color penColor = Color.black;
-    public int penSize = 10; 
-
-    private Whiteboard _lastTouchedBoard;
+    public int penSize = 10;
 
     void OnCollisionStay(Collision collision)
     {
-        // Check if we hit the whiteboard script
         Whiteboard board = collision.gameObject.GetComponent<Whiteboard>();
         if (board == null) return;
+        
+        // Start 2cm "behind" the tip
+        Vector3 startPos = tipTransform.position - (tipTransform.up * 0.02f);
+        
+        // Shoot the ray in the direction of the tip (marker y axis)
+        Ray ray = new Ray(startPos, tipTransform.up);
 
-        _lastTouchedBoard = board;
+        RaycastHit hit;
 
-        // Loop through touch points
-        foreach (ContactPoint contact in collision.contacts)
+        if (collision.collider.Raycast(ray, out hit, 0.2f))
         {
-            // Create a Ray starting 5cm away from wall, pointing IN
-            Ray ray = new Ray(contact.point + (contact.normal * 0.05f), -contact.normal);
-            RaycastHit hit;
-
-            // Raycast ONLY against the board collider we touched
-            if (collision.collider.Raycast(ray, out hit, 0.2f))
-            {
-                // Call the new "Draw" function (we need to add this to the board script!)
-                board.DrawAt(hit.textureCoord, penColor, penSize);
-            }
-        }
-    }
-
-    // Reset when lifting pen
-    void OnCollisionExit(Collision collision)
-    {
-        if (_lastTouchedBoard != null && collision.gameObject == _lastTouchedBoard.gameObject)
-        {
-            _lastTouchedBoard = null;
+            board.DrawAt(hit.textureCoord, penColor, penSize);
         }
     }
 }
