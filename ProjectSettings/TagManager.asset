@@ -8,6 +8,7 @@ TagManager:
   - Ingredient
   - SandwichBase
   - Car
+  - Board
   layers:
   - Default
   - TransparentFX
