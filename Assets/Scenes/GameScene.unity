@@ -3146,7 +3146,7 @@ Transform:
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 198.452, y: 8.133, z: -159.45}
+  m_LocalPosition: {x: 185.65, y: 7.576, z: -162.673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3644,7 +3644,7 @@ MonoBehaviour:
   m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 48
+  m_fontSizeMin: 16
   m_fontSizeMax: 56
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -6101,8 +6101,8 @@ MonoBehaviour:
     (Use the left joystick to move around)'
   showOnStart: 1
   displayTime: 5
-  distance: 2
-  heightOffset: 0.8
+  distance: 1.5
+  heightOffset: 0.7
   followSpeed: 3
   typingSpeed: 0.05
 --- !u!82 &479900614
@@ -7050,7 +7050,7 @@ Transform:
   m_GameObject: {fileID: 604597471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.551, y: 6.24, z: -3.57}
+  m_LocalPosition: {x: 23.551, y: 6.24, z: -3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14337,7 +14337,7 @@ MonoBehaviour:
 
     (Write whatever you want with the markers
     on the left)'
-  cleanThreshold: 0.4
+  whitePixelsThreshold: 0.9
   playerTag: Player
 --- !u!1 &1233669382
 GameObject:
@@ -19513,7 +19513,7 @@ Transform:
   m_GameObject: {fileID: 1699146164}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.454, y: 6.24, z: -4.44}
+  m_LocalPosition: {x: 9.439, y: 6.24, z: -3.848}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19534,7 +19534,7 @@ MonoBehaviour:
   dialogueController: {fileID: 479900613}
   thoughtText: Let me grab the eraser. It should be right at the center of the bar
     with the materials.
-  displayTime: 5
+  displayTime: 1
   wasTriggered: 0
 --- !u!65 &1699146167
 BoxCollider:
@@ -21619,7 +21619,7 @@ Transform:
   m_GameObject: {fileID: 1986114048}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.498, y: 6.24, z: -3.57}
+  m_LocalPosition: {x: 15.498, y: 6.24, z: -4.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

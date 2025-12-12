@@ -10,8 +10,8 @@ public class Eraser : MonoBehaviour
 
     [Header("Dialogue Settings")]
     public DialogueController dialogueController;
-    [TextArea] public string messageContent = "Good job! The board is clean enough now.";
-    [Range(0f, 1f)] public float cleanThreshold = 0.4f; // 0.4 = 40%
+    [TextArea] public string messageContent = "Thats about all I can clean. Can't reach the top. Let's leave a message to the team now. (Write whatever you want with the markers on the left)";
+    [Range(0f, 1f)] public float whitePixelsThreshold = 0.9f; // 0.9 = 90%
 
     [Header("References")]
     public string playerTag = "Player";
@@ -96,10 +96,10 @@ public class Eraser : MonoBehaviour
                 // Check the percentage
                 float currentCleanParams = board.GetCleanPercentage();
                 
-                if (currentCleanParams >= cleanThreshold)
+                if (currentCleanParams >= whitePixelsThreshold)
                 {
                     // Trigger Dialogue
-                    dialogueController.Think(messageContent, 7f);
+                    dialogueController.Think(messageContent, 1.0f, 0.8f, 0.2f);
                     hasTriggeredDialogue = true;
                     Debug.Log("Success! Board is " + (currentCleanParams * 100) + "% clean.");
                 }

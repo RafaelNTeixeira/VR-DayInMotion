@@ -18,9 +18,9 @@ public class DialogueController : MonoBehaviour
     public float displayTime = 3f;
 
     [Header("Settings")]
-    public float distance = 1.5f;
-    public float heightOffset = -0.3f;
-    public float followSpeed = 5f;
+    public float distance = 2f;
+    public float heightOffset = 0.8f;
+    public float followSpeed = 3f;
 
     [Header("Typewriter Settings")]
     [Tooltip("Seconds between each letter appearing")]
@@ -71,8 +71,11 @@ public class DialogueController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * followSpeed);
     }
 
-    public void Think(string thought, float duration)
+    public void Think(string thought, float duration, float distance = 1.6f, float heightOffset = 0.6f)
     {
+        this.distance = distance;
+        this.heightOffset = heightOffset;
+        
         thoughtCanvas.enabled = true;
         
         // Stop any existing routines/audio so they don't overlap
