@@ -14329,6 +14329,15 @@ MonoBehaviour:
   nearColor: {r: 1, g: 0.92, b: 0.016, a: 0.5}
   pulseSpeed: 3
   stopPulseRange: 2.2
+  dialogueController: {fileID: 479900613}
+  messageContent: 'Thats about all I can clean. Can''t reach the top.
+
+    Let''s
+    leave a message to the team now.
+
+    (Write whatever you want with the markers
+    on the left)'
+  cleanThreshold: 0.4
   playerTag: Player
 --- !u!1 &1233669382
 GameObject:
@@ -18902,7 +18911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 479900613}
-  thoughtText: Arrived at the office. I got here early, i don't expect so see my
+  thoughtText: Arrived at the office. I got here early, i don't expect to see my
     colleagues yet.
   displayTime: 5
   wasTriggered: 0

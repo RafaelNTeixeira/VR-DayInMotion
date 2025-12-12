@@ -71,4 +71,25 @@ public class Whiteboard : MonoBehaviour
         // Apply changes
         _clonedTexture.Apply();
     }
+
+    public float GetCleanPercentage()
+    {
+        if (_clonedTexture == null) return 0f;
+
+        Color[] pixels = _clonedTexture.GetPixels();
+        int whitePixels = 0;
+        int totalPixels = pixels.Length;
+
+        for (int i = 0; i < totalPixels; i++)
+        {
+            // Check if pixel is white (Clean)
+            if (pixels[i] == Color.white)
+            {
+                whitePixels++;
+            }
+        }
+
+        // Returns a value between 0.0 and 1.0 (e.g., 0.45 for 45%)
+        return (float)whitePixels / totalPixels;
+    }
 }
