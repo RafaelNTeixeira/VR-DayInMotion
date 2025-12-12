@@ -99,7 +99,7 @@ public class Eraser : MonoBehaviour
                 if (currentCleanParams >= whitePixelsThreshold)
                 {
                     // Trigger Dialogue
-                    dialogueController.Think(messageContent, 1.0f, 0.8f, 0.2f);
+                    dialogueController.Think(messageContent, 0.0f, 0.8f, 0.2f);
                     hasTriggeredDialogue = true;
                     Debug.Log("Success! Board is " + (currentCleanParams * 100) + "% clean.");
                 }

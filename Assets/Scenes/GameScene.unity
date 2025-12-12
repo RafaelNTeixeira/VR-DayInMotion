@@ -19534,7 +19534,7 @@ MonoBehaviour:
   dialogueController: {fileID: 479900613}
   thoughtText: Let me grab the eraser. It should be right at the center of the bar
     with the materials.
-  displayTime: 1
+  displayTime: 0.5
   wasTriggered: 0
 --- !u!65 &1699146167
 BoxCollider:
