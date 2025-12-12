@@ -18,7 +18,7 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveElevator(Transform player)
+    public IEnumerator MoveElevator(Transform player)
     {
         isBusy = true;
 
