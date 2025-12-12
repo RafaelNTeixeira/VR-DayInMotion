@@ -5,6 +5,8 @@ public class WhiteboardMarker : MonoBehaviour
     [Header("Setup")]
     public Transform tipTransform; 
     public GameObject arrowToActivate;
+    public GameObject dialogueToActivate1;
+    public GameObject dialogueToActivate2;
     
     [Header("Settings")]
     public Color penColor = Color.black;
@@ -27,6 +29,8 @@ public class WhiteboardMarker : MonoBehaviour
         {
             board.DrawAt(hit.textureCoord, penColor, penSize);
             arrowToActivate.SetActive(true);
+            dialogueToActivate1.SetActive(true);
+            dialogueToActivate2.SetActive(true);
         }
     }
 }

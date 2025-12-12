@@ -67,11 +67,11 @@ public class Eraser : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        // 1. Get Board Reference
+        // Get Board Reference
         Whiteboard board = collision.gameObject.GetComponent<Whiteboard>();
         if (board == null) return;
 
-        // 2. Erasing Logic
+        // Erasing Logic
         bool didErase = false;
         foreach (ContactPoint contact in collision.contacts)
         {

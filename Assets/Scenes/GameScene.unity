@@ -412,7 +412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &38654224
 Transform:
   m_ObjectHideFlags: 0
@@ -3231,8 +3231,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 169.02, y: 0.98, z: -81.78}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 188, y: 7.96, z: -163.308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3242,7 +3242,7 @@ Transform:
   - {fileID: 780523473}
   - {fileID: 1998450658}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &243253765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12104,7 +12104,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7a6d83a5f19957e45af2e7553720ee97, type: 2}
     - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -107
+      value: -76.74
       objectReference: {fileID: 0}
     - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12112,7 +12112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 112.1
+      value: 61.1
       objectReference: {fileID: 0}
     - target: {fileID: 1246017989305736185, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       propertyPath: m_Size.x
@@ -12796,6 +12796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipTransform: {fileID: 454914600}
   arrowToActivate: {fileID: 1395671428}
+  dialogueToActivate1: {fileID: 38654223}
+  dialogueToActivate2: {fileID: 1248059448}
   penColor: {r: 1, g: 0.05809614, b: 0, a: 1}
   penSize: 6
 --- !u!54 &1103158906
@@ -13578,6 +13580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipTransform: {fileID: 1957544676}
   arrowToActivate: {fileID: 1395671428}
+  dialogueToActivate1: {fileID: 38654223}
+  dialogueToActivate2: {fileID: 1248059448}
   penColor: {r: 0, g: 0, b: 1, a: 1}
   penSize: 6
 --- !u!54 &1160919517
@@ -14769,7 +14773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1248059449
 Transform:
   m_ObjectHideFlags: 0
@@ -16496,7 +16500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659063380704147776, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4839486534266123264, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16976,7 +16980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1659063380704147776, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4839486534266123264, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22245,7 +22249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1986114049
 Transform:
   m_ObjectHideFlags: 0
