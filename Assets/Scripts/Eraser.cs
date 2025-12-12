@@ -2,6 +2,66 @@ using UnityEngine;
 
 public class Eraser : MonoBehaviour
 {
+    [Header("Visual Settings")]
+    public Color farColor = Color.yellow; // Color when out of range
+    public Color nearColor = new Color(1, 0.92f, 0.016f, 0.5f); // Soft yellow
+    public float pulseSpeed = 3.0f;
+    public float stopPulseRange = 2.0f; // Distance to stop pulsing (e.g. when player is close to pick it up)
+
+    [Header("References")]
+    public string playerTag = "Player";
+    
+    // Internal variables
+    private Renderer toolRenderer;
+    private Color originalColor;
+    private Transform playerTransform;
+
+    void OnEnable()
+    {
+        // Setup Renderer
+        toolRenderer = GetComponent<Renderer>();
+        if (toolRenderer != null)
+        {
+            originalColor = toolRenderer.material.color;
+        }
+
+        // Find Player
+        if (playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (toolRenderer == null || playerTransform == null) return;
+
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+
+        if (distance > stopPulseRange)
+        {
+            float t = Mathf.PingPong(Time.time * pulseSpeed, 1f);
+            toolRenderer.material.color = Color.Lerp(originalColor, farColor, t);
+        }
+        else
+        {
+            toolRenderer.material.color = originalColor;
+        }
+    }
+
+    void OnDisable()
+    {
+        // Reset color when script is turned off
+        if (toolRenderer != null)
+        {
+            toolRenderer.material.color = originalColor;
+        }
+    }
+
     void OnCollisionStay(Collision collision)
     {
         // 1. Check if we hit the whiteboard script
@@ -11,15 +71,9 @@ public class Eraser : MonoBehaviour
         // 2. Loop through touch points
         foreach (ContactPoint contact in collision.contacts)
         {
-            // Create a Ray that starts 10cm away from the wall, pointing IN.
-            // We use the contact point + normal to find a safe starting spot.
             Ray ray = new Ray(contact.point + (contact.normal * 0.1f), -contact.normal);
-
             RaycastHit hit;
 
-            // 3. THE MAGIC FIX: "collision.collider.Raycast"
-            // This ignores the Eraser, the Player, and the World.
-            // It ONLY checks the specific collider we just touched (The Board).
             if (collision.collider.Raycast(ray, out hit, 1.0f))
             {
                 board.EraseAt(hit.textureCoord);

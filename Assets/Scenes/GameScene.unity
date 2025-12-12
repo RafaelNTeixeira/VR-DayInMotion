@@ -4582,6 +4582,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323657185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &331000588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1201321023852833903, guid: fb211967781995243bc56e45cf85d81a, type: 3}
+  m_PrefabInstance: {fileID: 1080291461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &331000592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331000588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &333109916
 GameObject:
   m_ObjectHideFlags: 0
@@ -11808,6 +11836,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7a6d83a5f19957e45af2e7553720ee97, type: 2}
+    - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 101.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201321023852833901, guid: fb211967781995243bc56e45cf85d81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 112.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1246017989305736185, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       propertyPath: m_Size.x
       value: 17.191757
@@ -12202,6 +12242,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 243253766}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1201321023852833903, guid: fb211967781995243bc56e45cf85d81a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 331000592}
     - targetCorrespondingSourceObject: {fileID: 6325236929086244106, guid: fb211967781995243bc56e45cf85d81a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 794156806}
@@ -14282,6 +14325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f039c658e7723f84b9b79ccacfe661f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  nearColor: {r: 1, g: 0.92, b: 0.016, a: 0.5}
+  pulseSpeed: 3
+  stopPulseRange: 2.2
+  playerTag: Player
 --- !u!1 &1233669382
 GameObject:
   m_ObjectHideFlags: 0
@@ -16477,6 +16525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371840acac4418f45b1d4ed4854707bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eraserScript: {fileID: 0}
   arrowToActivate: {fileID: 1196940800}
   playerTag: Player
 --- !u!1001 &1456883841
@@ -17627,6 +17676,7 @@ Transform:
   - {fileID: 1600940132}
   - {fileID: 604597472}
   - {fileID: 1986114049}
+  - {fileID: 1699146165}
   m_Father: {fileID: 673255780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1528714768
@@ -19427,6 +19477,77 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5262951012656193038, guid: 8c4fbbee2076ce4499e102372365ae9c, type: 3}
+--- !u!1 &1699146164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699146165}
+  - component: {fileID: 1699146167}
+  - component: {fileID: 1699146166}
+  m_Layer: 0
+  m_Name: DialogueTrigger (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1699146165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699146164}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.454, y: 6.24, z: -4.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1527031988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699146166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699146164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1860a27fe13b541b6bd1aef7fee324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueController: {fileID: 479900613}
+  thoughtText: Let me grab the eraser. It should be right at the center of the bar
+    with the materials.
+  displayTime: 5
+  wasTriggered: 0
+--- !u!65 &1699146167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699146164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.0772705, y: 1.9900303, z: 3.261917}
+  m_Center: {x: -0.6676178, y: 0.49501514, z: 0.314003}
 --- !u!1001 &1724574295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21513,7 +21634,7 @@ MonoBehaviour:
     Hugh...
 
     Fine'
-  displayTime: 5
+  displayTime: 3
   wasTriggered: 0
 --- !u!65 &1986114051
 BoxCollider:
