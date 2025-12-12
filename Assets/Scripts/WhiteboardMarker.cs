@@ -4,6 +4,7 @@ public class WhiteboardMarker : MonoBehaviour
 {
     [Header("Setup")]
     public Transform tipTransform; 
+    public GameObject arrowToActivate;
     
     [Header("Settings")]
     public Color penColor = Color.black;
@@ -25,6 +26,7 @@ public class WhiteboardMarker : MonoBehaviour
         if (collision.collider.Raycast(ray, out hit, 0.2f))
         {
             board.DrawAt(hit.textureCoord, penColor, penSize);
+            arrowToActivate.SetActive(true);
         }
     }
 }
