@@ -15,7 +15,6 @@ public class ElevatorDoorController : MonoBehaviour
 
     [Header("References")]
     public Elevator elevator;         
-    public Transform playerTransform; 
 
     private bool isAnimating = false;
 
@@ -74,7 +73,7 @@ public class ElevatorDoorController : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             // Call the elevator movement coroutine
-            StartCoroutine(elevator.MoveElevator(playerTransform));
+            StartCoroutine(elevator.MoveElevator(elevator.playerTransform));
         }
     }
 }

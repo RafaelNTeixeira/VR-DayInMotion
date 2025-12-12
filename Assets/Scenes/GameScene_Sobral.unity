@@ -6267,8 +6267,7 @@ MonoBehaviour:
   rightOutsideDoor: {fileID: 1186930781}
   moveDistance: 1
   duration: 2
-  elevator: {fileID: 0}
-  playerTransform: {fileID: 0}
+  elevator: {fileID: 1186930776}
 --- !u!1 &454914599
 GameObject:
   m_ObjectHideFlags: 0
@@ -14923,6 +14922,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5477028777825327692, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186930776}
+    - targetCorrespondingSourceObject: {fileID: -5477028777825327692, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720954875}
     - targetCorrespondingSourceObject: {fileID: 6015927292577806734, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186930783}
@@ -14950,6 +14952,8 @@ MonoBehaviour:
   moveAmount: 5
   startDelay: 3
   cooldown: 5
+  moveDuration: 3
+  playerTransform: {fileID: 0}
 --- !u!1 &1186930777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1227885389916902548, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
@@ -14999,7 +15003,6 @@ MonoBehaviour:
   moveDistance: 1
   duration: 2
   elevator: {fileID: 0}
-  playerTransform: {fileID: 0}
 --- !u!1001 &1195304065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21884,6 +21887,27 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1267478927615759095, guid: 958b0b05753708c4183f06601b2497cd, type: 3}
+--- !u!65 &1720954875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186930775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6049805, y: 3.4453096, z: 2.1515036}
+  m_Center: {x: 1.0664825, y: 1.2226548, z: 0.101722665}
 --- !u!1001 &1724574295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22851,6 +22875,8 @@ MonoBehaviour:
   moveAmount: 5
   startDelay: 3
   cooldown: 5
+  moveDuration: 3
+  playerTransform: {fileID: 0}
 --- !u!65 &1806205776
 BoxCollider:
   m_ObjectHideFlags: 0
