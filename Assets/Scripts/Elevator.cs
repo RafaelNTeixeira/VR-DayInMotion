@@ -3,47 +3,61 @@ using System.Collections;
 
 public class Elevator : MonoBehaviour
 {
-    public float moveAmount = 5f;    // How much the elevator moves
-    public float startDelay = 3f;    // Wait before moving
-    public float cooldown = 5f;      // Wait after moving before next action
+    public float moveAmount = 5f;    // total distance
+    public float startDelay = 3f;    // wait before moving
+    public float cooldown = 5f;      // wait after moving
+    public float moveDuration = 3f;  // <-- NEW: time to move smoothly
 
-    private bool isBusy = false;     // Prevents multiple triggers
-    private bool moveUp = true;      // Alternates direction
+    private bool isBusy = false;
+    private bool moveUp = true;
+
+    public Transform playerTransform; 
 
     private void OnTriggerEnter(Collider other)
     {
         if (!isBusy && other.CompareTag("Player"))
         {
-            StartCoroutine(MoveElevator(other.transform));
+            playerTransform = other.transform;
         }
     }
 
-    private IEnumerator MoveElevator(Transform player)
+    public IEnumerator MoveElevator(Transform player)
     {
         isBusy = true;
 
         // Wait before moving
         yield return new WaitForSeconds(startDelay);
 
-        // Calculate movement
-        Vector3 delta;
-        if (moveUp)
+        // Determine direction
+        Vector3 direction = moveUp ? Vector3.up : Vector3.down;
+        Vector3 startPos = transform.position;
+        Vector3 endPos = startPos + direction * moveAmount;
+
+        float elapsed = 0f;
+
+        // Smooth movement loop
+        while (elapsed < moveDuration)
         {
-            delta = Vector3.up * moveAmount;
-        }
-        else
-        {
-            delta = Vector3.down * moveAmount;
+            float t = elapsed / moveDuration;
+
+            // Move elevator
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+
+            // Move player with elevator
+            player.position = Vector3.Lerp(startPos, endPos, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
         }
 
-        // Move elevator and player manually
-        transform.position += delta;
-        player.position += delta;
+        // Snap to final position
+        transform.position = endPos;
+        player.position = endPos;
 
-        // Toggle direction for next time
+        // Switch direction for next time
         moveUp = !moveUp;
 
-        // Wait cooldown before allowing next trigger
+        // Cooldown
         yield return new WaitForSeconds(cooldown);
 
         isBusy = false;

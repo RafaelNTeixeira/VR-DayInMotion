@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem;
 
 public class TemporaryDeactivator : MonoBehaviour
 {
@@ -28,12 +27,12 @@ public class TemporaryDeactivator : MonoBehaviour
     private IEnumerator DisableRoutine()
     {
         // 1. Deactivate the object
-        objectToDeactivate.SetActive(false);
+        objectToDeactivate.SetActive(true);
 
         // 2. Wait for the specified duration (60 seconds)
         yield return new WaitForSeconds(duration);
 
         // 3. Reactivate the object
-        objectToDeactivate.SetActive(true);
+        objectToDeactivate.SetActive(false);
     }
 }
