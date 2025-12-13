@@ -1,0 +1,11 @@
+Model Information:
+* title:	Reception Desk
+* source:	https://sketchfab.com/3d-models/reception-desk-f843a87bd79649f5a8d1ee55751e5ed9
+* author:	bth8ns (https://sketchfab.com/bth8ns)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Reception Desk" (https://sketchfab.com/3d-models/reception-desk-f843a87bd79649f5a8d1ee55751e5ed9) by bth8ns (https://sketchfab.com/bth8ns) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
