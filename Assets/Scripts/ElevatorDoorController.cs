@@ -9,30 +9,37 @@ public class ElevatorDoorController : MonoBehaviour
     public Transform rightInsideDoor;
     public Transform rightOutsideDoor;
 
-    [Header("Settings")]
+    [Header("Door Settings")]
     public float moveDistance = 1f;
-    public float duration = 2f;
+    public float doorDuration = 2f;
 
-    [Header("References")]
-    public Elevator elevator;         
+    [Header("Elevator")]
+    public Elevator elevator;
 
-    private bool isAnimating = false;
+    [Header("Timing")]
+    public float waitBeforeElevator = 1f;
 
-    public void OpenDoors()
-    {
-        if (!isAnimating)
-            StartCoroutine(MoveDoors(opening: true));
-    }
+    private bool isBusy = false;
+    private bool isOpen = true;   // doors start OPEN
 
+    // 🔘 CALL FROM OUTSIDE BUTTON
     public void CloseDoors()
     {
-        if (!isAnimating)
-            StartCoroutine(MoveDoors(opening: false));
+        if (isBusy || !isOpen) return;
+        StartCoroutine(MoveDoorsRoutine(open: false));
     }
 
-    private IEnumerator MoveDoors(bool opening)
+    // 🔘 CALL FROM INSIDE BUTTON
+    public void OpenDoors()
     {
-        isAnimating = true;
+        if (isBusy || isOpen) return;
+        StartCoroutine(MoveDoorsRoutine(open: true));
+    }
+
+    private IEnumerator MoveDoorsRoutine(bool open)
+    {
+        isBusy = true;
+
         float time = 0f;
 
         Vector3 liStart = leftInsideDoor.localPosition;
@@ -40,17 +47,17 @@ public class ElevatorDoorController : MonoBehaviour
         Vector3 riStart = rightInsideDoor.localPosition;
         Vector3 roStart = rightOutsideDoor.localPosition;
 
-        float leftDir = opening ? -moveDistance : moveDistance;
-        float rightDir = opening ? moveDistance : -moveDistance;
+        float leftDir = open ? -moveDistance : moveDistance;
+        float rightDir = open ? moveDistance : -moveDistance;
 
         Vector3 liEnd = liStart + new Vector3(0, 0, leftDir);
         Vector3 loEnd = loStart + new Vector3(0, 0, leftDir);
         Vector3 riEnd = riStart + new Vector3(0, 0, rightDir);
         Vector3 roEnd = roStart + new Vector3(0, 0, rightDir);
 
-        while (time < duration)
+        while (time < doorDuration)
         {
-            float t = time / duration;
+            float t = time / doorDuration;
 
             leftInsideDoor.localPosition = Vector3.Lerp(liStart, liEnd, t);
             leftOutsideDoor.localPosition = Vector3.Lerp(loStart, loEnd, t);
@@ -66,13 +73,13 @@ public class ElevatorDoorController : MonoBehaviour
         rightInsideDoor.localPosition = riEnd;
         rightOutsideDoor.localPosition = roEnd;
 
-        isAnimating = false;
+        isOpen = open;
+        isBusy = false;
 
-        if (!opening) // Only trigger if doors were closing
+        // If doors just closed → move elevator
+        if (!open && elevator != null)
         {
-            yield return new WaitForSeconds(1f);
-
-            // Call the elevator movement coroutine
+            yield return new WaitForSeconds(waitBeforeElevator);
             StartCoroutine(elevator.MoveElevator(elevator.playerTransform));
         }
     }
