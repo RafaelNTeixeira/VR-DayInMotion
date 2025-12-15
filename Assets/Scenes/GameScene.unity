@@ -4001,9 +4001,10 @@ MonoBehaviour:
   forwardSpeed: 3
   acceleration: 5
   turnSpeed: 90
-  movingDrag: 0
-  stoppingDrag: 2
-  slideThreshold: 0
+  flatGroundDrag: 1
+  slopeDrag: 0
+  slopeThreshold: 5
+  groundCheckDist: 1.5
 --- !u!65 &231338165
 BoxCollider:
   m_ObjectHideFlags: 0
