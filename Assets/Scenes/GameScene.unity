@@ -4061,8 +4061,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 148.372, y: 3.531, z: 115.076}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 192.64, y: 1.633, z: -163.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4072,7 +4072,7 @@ Transform:
   - {fileID: 30965825}
   - {fileID: 1998450658}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &243253765
 GameObject:
   m_ObjectHideFlags: 0
@@ -6268,7 +6268,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815877086}
+        m_TargetAssemblyTypeName: ElevatorDoorController, Assembly-CSharp
+        m_MethodName: OpenDoors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -15493,6 +15505,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.28
       objectReference: {fileID: 0}
+    - target: {fileID: 7445438441846353951, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aec125d18552b044b3cafd5bea48213, type: 2}
     - target: {fileID: 8128668236925612103, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       propertyPath: m_Name
       value: Elevator
@@ -15548,21 +15564,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5477028777825327692, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186930781}
-    - targetCorrespondingSourceObject: {fileID: -5477028777825327692, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1186930782}
     - targetCorrespondingSourceObject: {fileID: 4878231779140126731, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186930778}
     - targetCorrespondingSourceObject: {fileID: 2101860701523514256, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1969126168}
+    - targetCorrespondingSourceObject: {fileID: 2101860701523514256, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1969126171}
+    - targetCorrespondingSourceObject: {fileID: 2101860701523514256, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1969126170}
     - targetCorrespondingSourceObject: {fileID: -4695061457439942140, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 403768126}
     - targetCorrespondingSourceObject: {fileID: -4695061457439942140, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 403768125}
+    - targetCorrespondingSourceObject: {fileID: -4695061457439942140, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815877086}
     - targetCorrespondingSourceObject: {fileID: -1227885389916902548, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186930780}
@@ -15584,11 +15606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29466bb3b633f7c4c95ee3e83080029d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 5
+  moveAmount: 7
   startDelay: 3
-  cooldown: 5
+  cooldown: 1
   moveDuration: 3
   playerTransform: {fileID: 0}
+  elevatorDoorController: {fileID: 1815877086}
 --- !u!1 &1186930777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4878231779140126731, guid: 5558e9e769ae9ed4b9ef3fa186064d89, type: 3}
@@ -15662,26 +15685,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.2624054, y: 3.0663307, z: 2.4102314}
   m_Center: {x: 1.8222733, y: 1.6859007, z: 0.0029983507}
---- !u!114 &1186930782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186930775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438ae968e52575b43b79b7d0fbbdbd3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftInsideDoor: {fileID: 1969126164}
-  leftOutsideDoor: {fileID: 1969126167}
-  rightInsideDoor: {fileID: 1969126163}
-  rightOutsideDoor: {fileID: 1969126166}
-  moveDistance: 1
-  doorDuration: 2
-  elevator: {fileID: 0}
-  waitBeforeElevator: 1
 --- !u!1001 &1195304065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23623,6 +23626,7 @@ MonoBehaviour:
   cooldown: 5
   moveDuration: 3
   playerTransform: {fileID: 0}
+  elevatorDoorController: {fileID: 0}
 --- !u!65 &1806205776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23754,6 +23758,26 @@ Transform:
   - {fileID: 1119242555}
   m_Father: {fileID: 231338167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815877086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969126162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438ae968e52575b43b79b7d0fbbdbd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftInsideDoor: {fileID: 1969126163}
+  leftOutsideDoor: {fileID: 1969126166}
+  rightInsideDoor: {fileID: 1969126164}
+  rightOutsideDoor: {fileID: 1969126167}
+  moveDistance: 1
+  doorDuration: 2
+  elevator: {fileID: 1186930776}
+  waitBeforeElevator: 1
 --- !u!1001 &1839838805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25027,6 +25051,110 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.91273236, y: 0.1311949, z: 0.4434046}
   m_Center: {x: -0.04363388, y: 0.026739644, z: -0.0014452708}
+--- !u!114 &1969126170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969126165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438ae968e52575b43b79b7d0fbbdbd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftInsideDoor: {fileID: 1969126163}
+  leftOutsideDoor: {fileID: 1969126166}
+  rightInsideDoor: {fileID: 1969126164}
+  rightOutsideDoor: {fileID: 1969126167}
+  moveDistance: 1
+  doorDuration: 2
+  elevator: {fileID: 1186930776}
+  waitBeforeElevator: 1
+--- !u!114 &1969126171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969126165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1969126170}
+        m_TargetAssemblyTypeName: ElevatorDoorController, Assembly-CSharp
+        m_MethodName: CloseDoors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
 --- !u!1 &1969158478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7251249982871370284, guid: e813f90aeb387174abe53c0835673da8, type: 3}
