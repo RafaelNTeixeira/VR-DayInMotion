@@ -1036,7 +1036,7 @@
                 {
                     "name": "",
                     "id": "87d9a1e7-704b-43bb-be2a-f2d8ecfde8b7",
-                    "path": "<KHRSimpleController>{LeftHand}/select",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -2129,7 +2129,7 @@
                 {
                     "name": "",
                     "id": "69580c32-8c9a-47d9-8b23-b53d760ca5da",
-                    "path": "<KHRSimpleController>{RightHand}/select",
+                    "path": "<XRController>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
