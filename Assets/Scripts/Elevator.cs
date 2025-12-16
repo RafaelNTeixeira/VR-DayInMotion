@@ -3,15 +3,17 @@ using System.Collections;
 
 public class Elevator : MonoBehaviour
 {
-    public float moveAmount = 5f;    // total distance
+    public float moveAmount = 6.7f;    // total distance
     public float startDelay = 3f;    // wait before moving
-    public float cooldown = 5f;      // wait after moving
+    public float cooldown = 3f;      // wait after moving
     public float moveDuration = 3f;  // <-- NEW: time to move smoothly
 
     private bool isBusy = false;
     private bool moveUp = true;
 
     public Transform playerTransform; 
+
+    public ElevatorDoorController elevatorDoorController;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,6 +61,8 @@ public class Elevator : MonoBehaviour
 
         // Cooldown
         yield return new WaitForSeconds(cooldown);
+
+        elevatorDoorController?.OpenDoors();
 
         isBusy = false;
     }

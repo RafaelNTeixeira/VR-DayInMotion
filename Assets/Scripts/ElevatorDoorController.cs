@@ -20,19 +20,18 @@ public class ElevatorDoorController : MonoBehaviour
     public float waitBeforeElevator = 1f;
 
     private bool isBusy = false;
-    private bool isOpen = true;   // doors start OPEN
 
     // 🔘 CALL FROM OUTSIDE BUTTON
     public void CloseDoors()
     {
-        if (isBusy || !isOpen) return;
+        if (isBusy) return;
         StartCoroutine(MoveDoorsRoutine(open: false));
     }
 
     // 🔘 CALL FROM INSIDE BUTTON
     public void OpenDoors()
     {
-        if (isBusy || isOpen) return;
+        if (isBusy) return;
         StartCoroutine(MoveDoorsRoutine(open: true));
     }
 
@@ -73,7 +72,6 @@ public class ElevatorDoorController : MonoBehaviour
         rightInsideDoor.localPosition = riEnd;
         rightOutsideDoor.localPosition = roEnd;
 
-        isOpen = open;
         isBusy = false;
 
         // If doors just closed → move elevator
