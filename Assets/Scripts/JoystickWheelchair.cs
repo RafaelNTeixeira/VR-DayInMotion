@@ -31,6 +31,19 @@ public class WheelchairJoystickDrive : MonoBehaviour
         rb.sleepThreshold = 0f; 
     }
 
+    private void Start()
+    {
+        // Check if our GameSettings exists
+        if (GameSettings.Instance != null)
+        {
+            forwardSpeed = GameSettings.Instance.chosenForwardSpeed;
+            turnSpeed = GameSettings.Instance.chosenTurnSpeed;
+            acceleration = GameSettings.Instance.chosenAcceleration;
+            
+            Debug.Log($"Settings Applied: Speed {forwardSpeed}, Turn {turnSpeed}, Acceleration {acceleration}");
+        }
+    }
+
     private void OnEnable() => leftMoveAction?.action?.Enable();
     private void OnDisable() => leftMoveAction?.action?.Disable();
 
