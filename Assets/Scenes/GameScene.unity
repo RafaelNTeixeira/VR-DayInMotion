@@ -1074,12 +1074,15 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7169383061771595424, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 162574737}
+      addedObject: {fileID: 1624904098}
     - targetCorrespondingSourceObject: {fileID: 7169383061771595424, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
       insertIndex: 1
-      addedObject: {fileID: 76250056}
+      addedObject: {fileID: 162574737}
     - targetCorrespondingSourceObject: {fileID: 7169383061771595424, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
       insertIndex: 2
+      addedObject: {fileID: 76250056}
+    - targetCorrespondingSourceObject: {fileID: 7169383061771595424, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
+      insertIndex: 3
       addedObject: {fileID: 1728432631}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -585447781806191929, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
@@ -3920,7 +3923,7 @@ Transform:
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 195.541, y: 0.82, z: -164.186}
+  m_LocalPosition: {x: 156.55, y: 3.968, z: 17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6643,6 +6646,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6722400080107978512, guid: 0414e3ad508c1a749a2de33c42fc949e, type: 3}
+--- !u!1 &453612363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453612364}
+  - component: {fileID: 453612366}
+  - component: {fileID: 453612365}
+  m_Layer: 0
+  m_Name: DialogueTrigger (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453612364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453612363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.2, y: -2.23, z: 2.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1624904098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453612365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453612363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1860a27fe13b541b6bd1aef7fee324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueController: {fileID: 27582470}
+  thoughtText: Okay, almost at work. It's that building straight ahead, right at
+    the intersection
+  displayTime: 2
+  isFinalDialogue: 0
+  closingEyesAnimator: {fileID: 0}
+  closingAnimationName: CloseEyes
+  menuSceneName: MainMenu
+  animationDuration: 2
+--- !u!65 &453612366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453612363}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.147004, y: 1, z: 8.493816}
+  m_Center: {x: -4.8503423, y: 0, z: -2.02791}
 --- !u!1 &454914599
 GameObject:
   m_ObjectHideFlags: 0
@@ -8226,7 +8304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345990007203115787, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.75
+      value: 62.1
       objectReference: {fileID: 0}
     - target: {fileID: 1345990007203115787, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8234,7 +8312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1345990007203115787, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -277.4
+      value: -281.62
       objectReference: {fileID: 0}
     - target: {fileID: 1345990007203115787, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12353,6 +12431,81 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6671600874076411192, guid: 958b0b05753708c4183f06601b2497cd, type: 3}
+--- !u!1 &1001536174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001536175}
+  - component: {fileID: 1001536177}
+  - component: {fileID: 1001536176}
+  m_Layer: 0
+  m_Name: DialogueTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001536175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001536174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.2, y: -2.23, z: -90.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2060762307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1001536176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001536174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1860a27fe13b541b6bd1aef7fee324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueController: {fileID: 27582470}
+  thoughtText: "Before I cross the street, I should press the pedestrian button.
+    \nDon't want to get worse than what I already am ahah"
+  displayTime: 5
+  isFinalDialogue: 0
+  closingEyesAnimator: {fileID: 0}
+  closingAnimationName: CloseEyes
+  menuSceneName: MainMenu
+  animationDuration: 2
+--- !u!65 &1001536177
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001536174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.007889, y: 1, z: 8.493816}
+  m_Center: {x: -0.6355972, y: 0, z: -2.0279102}
 --- !u!1 &1003965933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a33af02e39063841a48141936cfd773, type: 3}
@@ -22255,6 +22408,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2397462727912872629, guid: e372861043c42b84d9ee7cc2da3ad496, type: 3}
   m_PrefabInstance: {fileID: 1615571364}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624904097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624904098}
+  m_Layer: 0
+  m_Name: DialogueTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624904098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624904097}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1137, y: 109.81083, z: 4888}
+  m_LocalScale: {x: 60.005917, y: 60.005917, z: 60.005917}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1660799558}
+  - {fileID: 453612364}
+  m_Father: {fileID: 1649952338}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1649952338 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7169383061771595424, guid: b1b702adba1dcab448681ad51522d12a, type: 3}
@@ -22265,6 +22451,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1659063380704147776, guid: 1564c464467ee974e8ba0e0352546241, type: 3}
   m_PrefabInstance: {fileID: 1587950630}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1660799557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660799558}
+  - component: {fileID: 1660799560}
+  - component: {fileID: 1660799559}
+  m_Layer: 0
+  m_Name: DialogueTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660799558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.2, y: -2.23, z: 28.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1624904098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660799559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1860a27fe13b541b6bd1aef7fee324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueController: {fileID: 27582470}
+  thoughtText: "A construction site? Really?\nThey are not making my day easy. \nAt
+    least they added a ramp. Thanks for that."
+  displayTime: 2
+  isFinalDialogue: 0
+  closingEyesAnimator: {fileID: 0}
+  closingAnimationName: CloseEyes
+  menuSceneName: MainMenu
+  animationDuration: 2
+--- !u!65 &1660799560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660799557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.007889, y: 1, z: 8.493816}
+  m_Center: {x: -0.6355972, y: 0, z: -2.0279102}
 --- !u!1 &1673333087
 GameObject:
   m_ObjectHideFlags: 0
@@ -26415,6 +26676,7 @@ Transform:
   m_Children:
   - {fileID: 1946318975}
   - {fileID: 1374883071}
+  - {fileID: 1001536175}
   m_Father: {fileID: 344197028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077989691
