@@ -3923,7 +3923,7 @@ Transform:
   m_GameObject: {fileID: 231338163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 162, y: 1.7, z: -151.5}
+  m_LocalPosition: {x: 145.506, y: 0.686, z: 218.467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6693,7 +6693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 27582470}
   thoughtText: Okay, almost at work. It's that building straight ahead, right at
-    the intersection
+    the intersection.
   displayTime: 2
   isFinalDialogue: 0
   closingEyesAnimator: {fileID: 0}
@@ -10484,7 +10484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3541296, g: 0.40933305, b: 0.4339623, a: 1}
+  m_Color: {r: 0.3541296, g: 0.40933305, b: 0.4339623, a: 0.47058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16725,7 +16725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueController: {fileID: 27582470}
   thoughtText: "Well, let's finish another day. \nMy disability adds challenges,
-    but it never steals my drive."
+    but it never steals my drive :)"
   displayTime: 2
   isFinalDialogue: 1
   closingEyesAnimator: {fileID: 0}
